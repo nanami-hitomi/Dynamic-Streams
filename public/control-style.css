@@ -1,0 +1,13 @@
+.redRacers h1{
+    color:red;
+}
+.greenRacers h1{
+    color:limegreen;
+}
+.blueRacers h1{
+    color:#0000FF;
+}
+.important{
+    color:limegreen;
+    font-weight:bold;
+}

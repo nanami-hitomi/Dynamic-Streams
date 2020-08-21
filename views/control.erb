@@ -1,0 +1,22 @@
+<title>3v3v3 Stream Priority Control Panel</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/control-style.css">
+<div class="redRacers">
+    <h1>Red</h1>
+    <% locals[:streams][:red].each do |name| %>
+        <a id="<%=name%>" class="name" href="#" onClick="importanceSend('<%=name%>');"><%=name%></a><br>
+    <% end %>
+</div>
+<div class="greenRacers">
+    <h1>Green</h1>
+    <% locals[:streams][:green].each do |name| %>
+        <a id="<%=name%>" class="name" href="#" onClick="importanceSend('<%=name%>');"><%=name%></a><br>
+    <% end %>
+</div>
+<div class="blueRacers">
+    <h1>Blue</h1>
+    <% locals[:streams][:blue].each do |name| %>
+        <a id="<%=name%>" class="name" href="#" onClick="importanceSend('<%=name%>');"><%=name%></a><br>
+    <% end %>
+</div>
+<script src="/importance-sync.js"></script>

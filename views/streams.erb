@@ -1,0 +1,22 @@
+<title>3v3v3 Stream Layout</title>
+<script src="/flv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/stream-style.css">
+<div class="video-container">
+    <% locals[:streams].each do |name| %>
+        <video id="<%=name%>" class="<%=locals[:colours][name]%>"></video>
+        <script>
+        var videoElement = document.getElementById('<%=name%>');
+        var flvPlayer = flvjs.createPlayer({
+            type:'flv',
+            isLive:true,
+            enableStashBuffer:false,
+            url:"<%=locals[:server]%><%=name%>.flv"
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+        </script>
+    <% end %>
+</div>
+<script src="/importance-fetch.js"></script>
